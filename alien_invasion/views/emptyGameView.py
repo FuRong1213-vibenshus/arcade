@@ -7,13 +7,13 @@ import myShip
 from settings import *
 
 
-class GameView(arcade.View):
+class EmptyGameView(arcade.View):
     """ Main application class. """
 
     def __init__(self):
         """ Initializer """
         # Call the parent class initializer
-        super().__init__()
+        super().__init__()        
 
         # Variables that will hold sprite lists
         self.player_list = None
@@ -108,21 +108,21 @@ class GameView(arcade.View):
     def update(self, delta_time):
         """ Movement and game logic """
 
-        # Call update on all sprites
+        # Call update on all 
         self.alien_list.update()
         self.bullet_list.update()
 
         # Loop through each bullet
         for bullet in self.bullet_list:
 
-            # Check this bullet to see if it hit a coin
+            # Check this bullet to see if it hit an alien
             hit_list = arcade.check_for_collision_with_list(bullet, self.alien_list)
 
             # If it did, get rid of the bullet
             if len(hit_list) > 0:
                 bullet.remove_from_sprite_lists()
 
-            # For every coin we hit, add to the score and remove the coin
+            # For every alien we shoot, add to the score and remove the coin
             for alien in hit_list:
                 alien.remove_from_sprite_lists()
                 self.score += 1
@@ -132,13 +132,3 @@ class GameView(arcade.View):
                 bullet.remove_from_sprite_lists()
 
 
-def main():
-    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, "Alien Invasion!")
-    start_view = GameView()
-    window.show_view(start_view)
-    start_view.setup()
-    arcade.run()
-
-
-if __name__ == "__main__":
-    main()

@@ -7,13 +7,13 @@ import myShip
 from settings import *
 
 
-class MyGame(arcade.Window):
+class GameView(arcade.View):
     """ Main application class. """
 
     def __init__(self):
         """ Initializer """
         # Call the parent class initializer
-        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "Sprites and Bullets Demo")
+        super().__init__()
 
         # Variables that will hold sprite lists
         self.player_list = None
@@ -25,7 +25,7 @@ class MyGame(arcade.Window):
         self.score = 0
 
         # Don't show the mouse cursor
-        self.set_mouse_visible(False)
+        self.window.set_mouse_visible(False)
 
         arcade.set_background_color(arcade.color.BLUE)
 
@@ -132,11 +132,5 @@ class MyGame(arcade.Window):
                 bullet.remove_from_sprite_lists()
 
 
-def main():
-    window = MyGame()
-    window.setup()
-    arcade.run()
 
 
-if __name__ == "__main__":
-    main()

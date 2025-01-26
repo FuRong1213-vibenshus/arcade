@@ -8,7 +8,7 @@ class Bullet(arcade.Sprite):
         super().__init__(filename, sprite_scaling)
 
         self.change_x = 0  
-        self.change_y = 0 
+        self.change_y = 1 
 
     def update(self):
         # Move the bullet

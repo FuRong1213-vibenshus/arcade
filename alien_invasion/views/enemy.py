@@ -1,10 +1,14 @@
+
+
+
+
 import arcade
 
 class Alien(arcade.Sprite):
     def __init__(self, filename, sprite_scaling):
         super().__init__(filename, sprite_scaling) 
         self.change_x = 0
-        self.change_y = 0
+        self.change_y = -0.5
     
     def update(self):
         """
