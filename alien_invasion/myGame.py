@@ -27,7 +27,7 @@ class MyGame(arcade.Window):
         # Don't show the mouse cursor
         self.set_mouse_visible(False)
 
-        arcade.set_background_color(arcade.color.AMAZON)
+        arcade.set_background_color(arcade.color.BLUE)
 
     def setup(self):
 
@@ -62,7 +62,7 @@ class MyGame(arcade.Window):
             self.alien_list.append(alien)
 
         # Set the background color
-        arcade.set_background_color(arcade.color.AMAZON)
+        arcade.set_background_color(arcade.color.BLUE)
 
     def on_draw(self):
         """
